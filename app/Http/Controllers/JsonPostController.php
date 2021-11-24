@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\BlogPostResource;
 use App\Models\BlogPost;
+use App\Http\Resources\BlogPostResource;
 
 class JsonPostController
 {

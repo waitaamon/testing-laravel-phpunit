@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <x-jet-application-mark class="block h-9 text-ink fill-current w-auto" />
                     </a>
                 </div>
 
@@ -14,6 +14,27 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link
+                        href="{{ action([\App\Http\Controllers\BlogPostAdminController::class, 'index']) }}"
+                        :active="str_contains(request()->url(), '/blog')"
+                    >
+                        {{ __('Blog') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link
+                        href="{{ action([\App\Http\Controllers\ExternalPostAdminController::class, 'index']) }}"
+                        :active="str_contains(request()->url(), '/external')"
+                    >
+                        {{ __('Externals') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link
+                        href="{{ action([\App\Http\Controllers\RedirectAdminController::class, 'index']) }}"
+                        :active="str_contains(request()->url(), '/redirect')"
+                    >
+                        {{ __('Redirects') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -67,9 +88,9 @@
                             </x-slot>
                         </x-jet-dropdown>
                     </div>
-                @endif
+            @endif
 
-                <!-- Settings Dropdown -->
+            <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
@@ -113,7 +134,7 @@
                                 @csrf
 
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
-                                         onclick="event.preventDefault();
+                                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </x-jet-dropdown-link>
@@ -170,12 +191,12 @@
                     </x-jet-responsive-nav-link>
                 @endif
 
-                <!-- Authentication -->
+            <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
+                                               onclick="event.preventDefault();
                                     this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-jet-responsive-nav-link>
