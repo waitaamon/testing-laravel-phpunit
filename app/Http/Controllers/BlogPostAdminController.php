@@ -28,10 +28,7 @@ class BlogPostAdminController
         ]);
     }
 
-    public function update(
-        BlogPost $post,
-        UpdateBlogPostRequest $request
-    ) {
+    public function update(BlogPost $post, UpdateBlogPostRequest $request) {
         $validated = collect($request->validated())->except('publish');
 
         $post->update($validated->toArray());

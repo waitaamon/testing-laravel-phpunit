@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::feeds();
 
 Route::get('/', [BlogPostController::class, 'index']);
-Route::get('/blog/{post}.json', [JsonPostController::class, 'show']);
+Route::get('/blog/{post:slug}.json', [JsonPostController::class, 'show']);
 Route::get('/blog.json', [JsonPostController::class, 'index']);
 Route::get('/blog/{post}', [BlogPostController::class, 'show']);
 Route::get('/blog/{post}/og', BlogPostOgImageController::class);
