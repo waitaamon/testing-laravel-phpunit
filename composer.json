@@ -6,6 +6,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "dg/rss-php": "^1.5",
+        "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.65",

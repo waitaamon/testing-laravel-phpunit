@@ -13,6 +13,14 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'external_feeds' => [
+        'https://stitcher.io/rss',
+        'https://sebastiandedeyne.com/index.xml',
+        'https://freek.dev/feed/originals',
+        'https://alexvanderbist.com/feed/',
+        'https://rias.be/feed',
+        'https://rubenvanassche.com/rss/'
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

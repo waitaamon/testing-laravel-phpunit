@@ -2,6 +2,8 @@
 
 namespace App\Support\Rss;
 
+namespace App\Support\Rss;
+
 use FeedException;
 use SimpleXMLElement;
 

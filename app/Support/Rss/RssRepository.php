@@ -8,9 +8,7 @@ use SimpleXMLElement;
 
 class RssRepository
 {
-    /**
-     * @return \Illuminate\Support\Collection|\App\Support\Rss\RssEntry[]
-     */
+
     public function fetch(string $url): Collection
     {
         $rssString = Http::get($url)->body();

@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
+use Illuminate\Support\Facades\DB;
 use App\Actions\SyncExternalPost;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
 use Spatie\Fork\Fork;
 
 class SyncExternalPostsCommand extends Command
